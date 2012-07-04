@@ -110,8 +110,7 @@ a:hover {
 }
 
 a:focus {
-    /*outline: thin dotted; */
-    outline: none;
+    outline: thin dotted;
 }
 
 /*
@@ -149,7 +148,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
 }
@@ -300,7 +299,7 @@ fieldset {
  */
 
 label {
-    cursor: pointer;
+   /* cursor: pointer; */
 }
 
 /*
@@ -444,6 +443,7 @@ td {
 
 
 
+
 /* ============================================================= */
 /* ========================== LESSS MIXINS ===================== */
 
@@ -523,33 +523,28 @@ td {
 
 
 
-/* ============================================================= */
-/* ============== ALLGEMEINES ====================== */
 
 *{
     .box-sizing(border-box);
 }
 
 body{
-    font-size: 15px;
-    background: rgb(249,249,249);
+    font-size: 13px;
+    background: rgb(245,245,245);
     font-weight: bold;
+    font-family: arial;
+
+    background: url(../img/fussel.png);
+
+
 
 }
+
 
 
 a, a:link, a:hover, a:active, a:visited{
     text-decoration: none;
     color: black;
-}
-
-
-
-section{
-    width: 90%;
-    margin: 100px auto;
-
-    padding-top: 50px;
 }
 
 
@@ -560,19 +555,23 @@ h1, h2, h3, p{
 }
 
 
-/* ================================================= */
+
+section{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#sponsoren{
+    width: 90%;
+    margin: 0 auto;
+}
 
 
 
-
-
-/* ================================================= */
-/* ============== TITEL ====================== */
 
 
 /* PARALLAX */
 #parallax{
-
 
   text-align: center;
   position: relative;
@@ -592,7 +591,7 @@ h1, h2, h3, p{
 #layer8{
     left: 50%;
     top: 50%;
-  margin-left: -40%;
+    margin-left: -40%;
 }
 
 
@@ -618,19 +617,50 @@ h1, h2, h3, p{
 
 
 
+
 /* ================================================= */
-/* ============== SPONSOREN ====================== */
+/* ====================NAVIGATION===================== */
 
-#sponsoren{
-
-    text-align: center;
+nav{
     width: 80%;
     margin: 0 auto;
 }
 
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li:before{
+    content: " | ";
+}
+
+nav ul li:first-child:before{
+    content: "";
+}
+
+
+/* ================================================= */
+
+
+
+
+
+
+/* ================================================= */
+/* ============== SPONSOREN ====================== */
+
+
+
+
 #sponsoren ul{
 padding: 0;
+list-style: none;
 }
+
 
 #sponsoren ul li {
     display: inline-block;
@@ -641,12 +671,11 @@ padding: 0;
 
 }
 
+
 #sponsoren ul li a{
     display: block;
 
 }
-
-
 
 
 
@@ -685,202 +714,168 @@ padding: 0;
 .arsmedium a{ background: url('../img/sponsoren.png') no-repeat -340px -158px; width: 141px; height: 70px; }
 .arsmedium:hover a{ background: url('../img/sponsoren.png') no-repeat -189px -216px; width: 141px; height: 70px; }
 
+/* ============== SPONSOREN ====================== */
+/* ================================================= */
 
 
-#sponsoren ul li a:hover{
-    -moz-transition: -moz-transform 0.2s ease-out;
-    -moz-transform: scale(1.1);
-}
 
 
 
 /* ================================================= */
 /* ============== AUSSTELLUNG ====================== */
-
 #ausstellung{
     position: relative;
-
-   /* background: -moz-radial-gradient(center, ellipse cover, rgb(250,248,250) 0%, rgb(249,249,249) 90%, rgb(249,249,249) 100%); /* FF3.6+ */
-}
-
-.csstransforms3d .cubeface{
-    background-color: white;
-
-    width: 200px;
-    height: 200px;
-    padding-left: 10px;
-
-    position: absolute;
-    .backface-visibility(hidden);
-}
-
-
-.csstransforms3d #cube-container{
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 50%;
-    margin-top: -100px;
-    left: 50%;
-   margin-left: -100px;
-    .perspective(1000px);
-}
-
-.csstransforms3d #cube{
-    width: 200px;
-    height: 200px;
-    .transform-style();
-
-    .transform( translateZ(-150px) rotateY(0deg) rotateZ( 10deg) );
-
-    .animation( rotation 10s infinite 2s linear )
-}
-
-
-.csstransforms3d #cube .cubefront  { .transform(rotateY(   0deg ) translateZ( 100px ) ); }
-.csstransforms3d #cube .cubeback   { .transform(rotateY( 180deg ) translateZ( 100px ) ); }
-.csstransforms3d #cube .cuberight  { .transform(rotateY(  90deg ) translateZ( 100px ) ); }
-.csstransforms3d #cube .cubeleft   { .transform(rotateY( -90deg ) translateZ( 100px ) ); }
-.csstransforms3d #cube .cubetop    { .transform(rotateX(  90deg ) translateZ( 100px ) ); }
-.csstransforms3d #cube .cubedown   { .transform(rotateX( -90deg ) translateZ( 100px ) ); }
-
-
-
-@-moz-keyframes rotation{
-    0%  { -moz-transform: translateZ( -100px ) rotateY(    0deg ) rotateZ( 10deg ); }
-    25% { -moz-transform: translateZ( -100px ) rotateY(  -90deg ) rotateZ( 10deg ); }
-    50% { -moz-transform: translateZ( -100px ) rotateY( -180deg ) rotateZ( 10deg ); }
-    75% { -moz-transform: translateZ( -100px ) rotateY( -270deg ) rotateZ( 10deg ); }
-    100%{ -moz-transform: translateZ( -100px ) rotateY( -360deg ) rotateZ( 10deg ); }
 }
 
 
 
 
 
-
-
-
-/* ============== AUSSTELLUNG ====================== */
 /* ================================================= */
-
-
-
-
-
-
 /* ============== ABSOLVENTEN ====================== */
 
-#absolventen ul{
-    list-style: none;
+#absolventen-liste{
+    width: 100%;
+
+}
+
+#absolventen-liste ul{
     padding: 0;
+    list-style: none;
 
-    text-align: justify;
-
+    -moz-column-count: 2;
+     -webkit-column-count: 2;
 }
 
 
-#absolventen ul li{
-    display: inline;
+#absolventen-liste ul a:hover{
+    border-bottom: 2px solid black;
 }
 
-#absolventen ul li a:after{
-    content: "\00a0|";
-    display: inline;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
+
+
+
+
+/* ================================================= */
+/* ============== GALLERY ====================== */
+
+#absolventen{
+
+
+    position: relative;
+}
+
+#slides{
+    display: none;
+}
+
+#gallery{
+    position: relative;
+    height: 0;
+
+    overflow: hidden;
+}
+
+#gallery.open{
+    height: 100%;
+    overflow: auto;
+}
+
+#close{
+    display: none;
+    position: relative;
+
+    z-index: 100;
+    width: 100%;
+    margin: 5em 0 0 0;
     text-align: center;
 }
 
-#absolventen ul li:last-child a:after, #absolventen ul li.nobullet a:after{
-    content: '';
-    display: auto;
-    text-align: left;
-}
 
-#absolventen ul li a:hover{
-    color: blue;
+.open #close{
+    display: block;
 }
 
 
-
-
-
-
-/* ============== GALLERY ====================== */
-#gallery{
-   height: 0;
-   overflow: hidden;
+#gallery img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 100%;
 }
 
-.open #gallery{
 
-    overflow-x: scroll;
-    overflow-y: hidden;
 
-   -moz-transition: height 0.5s ease-out;
-   height: 100%;
-
-   position: relative;
-
-  /* background: -moz-radial-gradient(center, ellipse cover, rgb(255,255,250) 0%, rgb(249,249,249) 90%, rgb(249,249,249) 100%); /* FF3.6+ */
-
-}
-
-#slidewrapper{
-    width: 10000px;
-height: 100%;
-
-position: relative;
-
-}
-
-.metaslide{
-    float: left;
-    height: 100%;
-
-}
 .slide{
-    width: 300px;
-    float: left;
-    padding: 10px;
-    height: 100%;
+     position: relative;
 
-    position: relative;
+     min-height: 300px;
 }
 
 
+.slide-inner{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
 
 
-.slide img{
-
-
+.image{
+    text-align: center;
 }
-
-
-
-.leftcursor{
-    cursor: w-resize;
-}
-
-.rightcursor{
-    cursor: e-resize;
-}
-
-
-
-/* ================ IMPRESSUM =================================== */
-
-#drehen{
+.image img{
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url('../img/drehen.png');
+}
+
+
+.portrait{
+    min-width: 100px;
+    min-height: 100px;
+}
+
+
+
+#overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    z-index: 10000;
+    display: none;
+    color: white;
 
 
 }
 
-/*========================================================================== */
+/*
+#ohm{
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+#team{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#team h2{
+    margin-bottom: 0;
+}
+
+#team p{
+    margin-top: 0;
+}
+
+*/
+
+#team table{
+    width: 100%;
+}
+
 
 
 /* ==|== media queries ======================================================
@@ -895,241 +890,84 @@ position: relative;
 
 
 
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
 
 
-/* Desktops and laptops ----------- */
+}
+
+
+/* iPads (portrait) ----------- */
 @media only screen
-and (min-width : 1000px) {
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
 /* Styles */
 
-#absolventen ul li a:after{
-    content: "\00a0|";
-    display: inline;
-    margin-left: 1em;
-    margin-right: 1em;
-    text-align: center;
-}
 
-/* ============== NAVIGATION ====================== */
+    body{
+        font-size: 16px;
+    }
 
 
-nav{
+    #absolventen-liste ul{
+        -webkit-column-count: 3;
+    }
+    .csstransforms3d #cube-container{
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        margin-top: -200px;
+        left: 50%;
+       margin-left: -200px;
+        .perspective(1000px);
+    }
 
-    font-size: 1.1em;
-    text-align: center;
-}
+    .csstransforms3d #ausstellung #cube{
+        width: 400px;
+        height: 400px;
+        .transform-style();
 
-.home-link{
-    z-index: 1000;
-    display: block;
-    width: 80px;
-    height: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
+        .transform( translateZ(-200px) rotateY(0deg) rotateZ( 10deg) );
+        .animation( rotation 20s infinite 4s linear );
 
-.top-left{
-    display: block;
-    position: absolute;
-    width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 80px 80px 0px 0px;
-border-color: #000 transparent transparent transparent;
-}
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+    }
 
-.home-link .text{
-    display: block;
-    .transform( rotate(-45deg) );
-    position: absolute;
-    top: 35px;
-    left: 30px;
-}
+    .csstransforms3d #ausstellung.section-active #cube{
+       -moz-animation-play-state: running;
+       -webkit-animation-play-state: running;
 
-/* ============================== */
+    }
 
 
 
-.ausstellung-link{
-
-    z-index: 1000;
-    display: block;
-    position: fixed;
-
-    width: 80px;
-    height: 80px;
-
-    top: 0;
-    right: 0;
-
-
-}
-
-.top-right{
-    display: block;
-    position: absolute;
-    width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 0px 80px 80px 0px;
-border-color: transparent #000 transparent transparent;
-}
-
-
-.ausstellung-link .text{
-    display: block;
-
-    .transform( rotate(45deg) );
-    position: absolute;
-    top: 35px;
-    right: 4px;
-}
-
-
-
-
-
-/* ============================== */
-
-
-.absolventen-link{
-
-    z-index: 1000;
-    display: block;
-    position: fixed;
-
-    width: 80px;
-    height: 80px;
-
-    bottom: 0;
-    right: 0;
-
-
-}
-
-.bottom-right{
-    display: block;
-    position: absolute;
-    width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 0px 0px 80px 80px;
-border-color: transparent transparent #000 transparent;
-}
-
-
-.absolventen-link .text{
-    display: block;
-    .transform( rotate(-45deg ) );
-    position: absolute;
-    bottom: 35px;
-    right: 4px;
-}
-
-
-/* ============================== */
-
-
-.impressum-link{
-
-    z-index: 1000;
-    display: block;
-    position: fixed;
-
-    width: 80px;
-    height: 80px;
-
-    bottom: 0px;
-    left: 0px;
-
-
-}
-
-.bottom-left{
-    display: block;
-    position: absolute;
-    width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 100px 0px 0px 100px;
-border-color: transparent transparent transparent #000;
-}
-
-
-.impressum-link .text{
-    display: block;
-    .transform( rotate(45deg) );
-    position: absolute;
-    bottom: 38px;
-    left: 7px;
-}
-
-
-
-/* ================== AUSSTELLUNG ================ */
-
-
-#ausstellung{
-    position: relative;
-
-   /* background: -moz-radial-gradient(center, ellipse cover, rgb(250,248,250) 0%, rgb(249,249,249) 90%, rgb(249,249,249) 100%); /* FF3.6+ */
-}
-
-.csstransforms3d .cubeface{
+    .csstransforms3d .cubeface{
     background-color: white;
 
     width: 400px;
     height: 400px;
-    padding-left: 10px;
+    padding: 0 15px;
 
     position: absolute;
-    .backface-visibility(hidden);
-}
-
-
-.csstransforms3d #cube-container{
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: 50%;
-    margin-top: -200px;
-    left: 50%;
-   margin-left: -200px;
-    .perspective(1000px);
-}
-
-.csstransforms3d #cube{
-    width: 400px;
-    height: 400px;
-    .transform-style();
-
-    .transform( translateZ(-150px) rotateY(0deg) rotateZ( 10deg) );
-
-    .animation( rotation 10s infinite 2s linear )
-}
-
-
-.csstransforms3d #cube .cubefront  { .transform(rotateY(   0deg ) translateZ( 200px ) ); }
-.csstransforms3d #cube .cubeback   { .transform(rotateY( 180deg ) translateZ( 200px ) ); }
-.csstransforms3d #cube .cuberight  { .transform(rotateY(  90deg ) translateZ( 200px ) ); }
-.csstransforms3d #cube .cubeleft   { .transform(rotateY( -90deg ) translateZ( 200px ) ); }
-.csstransforms3d #cube .cubetop    { .transform(rotateX(  90deg ) translateZ( 200px ) ); }
-.csstransforms3d #cube .cubedown   { .transform(rotateX( -90deg ) translateZ( 200px ) ); }
-
-
-
-@-moz-keyframes rotation{
-    0%  { -moz-transform: translateZ( -200px ) rotateY(    0deg ) rotateZ( 10deg ); }
-    25% { -moz-transform: translateZ( -200px ) rotateY(  -90deg ) rotateZ( 10deg ); }
-    50% { -moz-transform: translateZ( -200px ) rotateY( -180deg ) rotateZ( 10deg ); }
-    75% { -moz-transform: translateZ( -200px ) rotateY( -270deg ) rotateZ( 10deg ); }
-    100%{ -moz-transform: translateZ( -200px ) rotateY( -360deg ) rotateZ( 10deg ); }
+    .backface-visibility(visible);
 }
 
 
 
-@-webkit-keyframes rotation{
+    .csstransforms3d #cube .cubefront  { .transform(rotateY(   0deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubeback   { .transform(rotateY( 180deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cuberight  { .transform(rotateY(  90deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubeleft   { .transform(rotateY( -90deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubetop    { .transform(rotateX(  90deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubedown   { .transform(rotateX( -90deg ) translateZ( 200px ) ); }
+
+
+    @-webkit-keyframes rotation{
     0%  { -webkit-transform: translateZ( -200px ) rotateY(    0deg ) rotateZ( 10deg ); }
     25% { -webkit-transform: translateZ( -200px ) rotateY(  -90deg ) rotateZ( 10deg ); }
     50% { -webkit-transform: translateZ( -200px ) rotateY( -180deg ) rotateZ( 10deg ); }
@@ -1140,221 +978,486 @@ border-color: transparent transparent transparent #000;
 
 
 
-
-
-
-/* ================================================ */
+}
 
 
 
 
 
-/* ================== GALLERY ==================== */
+@media only screen and(min-width: 950px){
 
-#slidewrapper{
-    height: 100%;
-    position: relative;
+    body{
+        font-size: 16px;
+    }
+
+
+    nav ul li:before{
+        display: none;
+    }
+
+
+
+    #gallery{
+        width: 900px;
+        position: relative;
+
+    }
+
+
+    .slide-inner{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        cursor: none;
+
+    }
+
+
+
+    .daten{
+        float: left;
+        position: relative;
+        width: 50%;
+
+        min-height: 200px;
+
+        padding: 0 15px;
+    }
+
+
+    .title{
+        margin: 0;
+        height: 25%;
+
+    }
+
+    .name{
+        height: 25%;
+        margin: 0;
+
+    }
+
+    .profs{
+        height: 25%;
+        margin: 0;
+
+    }
+
+    .kontakt{
+        height: 25%;
+        margin: 0;
+        position: relative;
+    }
+
+    .kontakt p{
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+    }
+
+    .portrait{
+        position: relative;
+        float: left;
+        width: 50%;
+
+        min-height: 100px;
+        min-width: 100px;
+    }
+
+    .portrait img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+    .konzept h2{
+        margin: 0;
+    }
+
+    .konzept p.long{
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        margin-top: 0;
+    }
+
+
+    section{
+        width: 900px;
+
+        padding: 0;
+    }
+
+    #sponsoren{
+        width: 900px;
+    }
+
+
+    #sponsoren ul li a:hover{
+    -moz-transition: -moz-transform 0.2s ease-out;
+    -moz-transform: scale(1.1);
+
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    -webkit-transform: scale(1.1);
+
+    transition: transform 0.2s ease-out;
+    transform: scale(1.1);
+
+    transition: transform 0.2s ease-out;
+    transform: scale(1.1);
+}
+
+
+
+    #ohm{
+        width: 900px;
+    }
+
+
+    #absolventen-liste{
+        padding: 0 15px;
+    }
+
+    #absolventen-liste ul{
+         -moz-column-count: 3;
+         -webkit-column-count: 3;
+    }
+
+
+    #impressum{
+        padding: 0 15px;
+    }
+
+
+#cursor{
+    z-index: 10000;
+
+    width: 90px;
+    height: 90px;
+
+    margin-left: -45px;
+    margin-top: -45px;
+    position: fixed;
     left: 0;
-    overflow: hidden;
+    top: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+
+
+}
+
+
+#cursor.normal{
+    display: none;
+    background: url('../img/hand.png') no-repeat;
+}
+
+#cursor.gallery.left{
+    display: block;
+    background: url('../img/handleft.png') no-repeat;
+}
+
+#cursor.gallery.right{
+    display: block;
+    background: url('../img/handright.png') no-repeat;
+}
+
+#cursor.brille{
+    background: url('../img/brille.png') no-repeat;
+}
+
+
+
+
+
+
+    /* ============================== /*/
+
+    #absolventen-liste ul{
+        -webkit-column-count: 3;
+    }
+    .csstransforms3d #cube-container{
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        margin-top: -200px;
+        left: 50%;
+       margin-left: -200px;
+        .perspective(1000px);
+    }
+
+    .csstransforms3d #ausstellung #cube{
+        width: 400px;
+        height: 400px;
+        .transform-style();
+
+        .transform( translateZ(-200px) rotateY(0deg) rotateZ( 10deg) );
+        .animation( rotation 20s infinite 3s linear );
+
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+    }
+
+    .csstransforms3d #ausstellung.section-active #cube{
+       -moz-animation-play-state: running;
+       -webkit-animation-play-state: running;
+
+    }
+
+
+
+        .csstransforms3d .cubeface{
+        background-color: white;
+
+        width: 400px;
+        height: 400px;
+        padding: 0 15px;
+
+        position: absolute;
+        .backface-visibility(visible);
+    }
+
+
+
+    .csstransforms3d #cube .cubefront  { .transform(rotateY(   0deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubeback   { .transform(rotateY( 180deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cuberight  { .transform(rotateY(  90deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubeleft   { .transform(rotateY( -90deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubetop    { .transform(rotateX(  90deg ) translateZ( 200px ) ); }
+    .csstransforms3d #cube .cubedown   { .transform(rotateX( -90deg ) translateZ( 200px ) ); }
+
+
+    @-webkit-keyframes rotation{
+        0%  { -webkit-transform: translateZ( -200px ) rotateY(    0deg ) rotateZ( 10deg ); }
+        25% { -webkit-transform: translateZ( -200px ) rotateY(  -90deg ) rotateZ( 10deg ); }
+        50% { -webkit-transform: translateZ( -200px ) rotateY( -180deg ) rotateZ( 10deg ); }
+        75% { -webkit-transform: translateZ( -200px ) rotateY( -270deg ) rotateZ( 10deg ); }
+        100%{ -webkit-transform: translateZ( -200px ) rotateY( -360deg ) rotateZ( 10deg ); }
+    }
+
+
+     @-moz-keyframes rotation{
+        0%  { -moz-transform: translateZ( -200px ) rotateY(    0deg ) rotateZ( 10deg ); }
+        25% { -moz-transform: translateZ( -200px ) rotateY(  -90deg ) rotateZ( 10deg ); }
+        50% { -moz-transform: translateZ( -200px ) rotateY( -180deg ) rotateZ( 10deg ); }
+        75% { -moz-transform: translateZ( -200px ) rotateY( -270deg ) rotateZ( 10deg ); }
+        100%{ -moz-transform: translateZ( -200px ) rotateY( -360deg ) rotateZ( 10deg ); }
+    }
+
+
+
+
+
+
+
+
+    .home-link{
+        z-index: 1000;
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .top-left{
+        display: block;
+        position: absolute;
+        width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 80px 80px 0px 0px;
+    border-color: #000 transparent transparent transparent;
+    }
+
+    .home-link:hover .top-left, .home-link.link-active .top-left{
+        border-color: rgb(35,35,35) transparent transparent transparent;
+    }
+
+    .home-link .text{
+        display: block;
+        .transform( rotate(-45deg) );
+        position: absolute;
+        top: 35px;
+        left: 30px;
+    }
+
+
+
+
+    .ausstellung-link{
+
+        z-index: 1000;
+        display: block;
+        position: fixed;
+
+        width: 80px;
+        height: 80px;
+
+        top: 0;
+        right: 0;
+
+
+    }
+
+    .top-right{
+        display: block;
+        position: absolute;
+        width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 80px 80px 0px;
+    border-color: transparent #000 transparent transparent;
+    }
+
+
+    .ausstellung-link:hover .top-right, .ausstellung-link.link-active .top-right{
+        border-color: transparent rgb(35,35,35) transparent transparent;
+    }
+
+
+    .ausstellung-link .text{
+        display: block;
+
+        .transform( rotate(45deg) );
+        position: absolute;
+        top: 35px;
+        right: 4px;
+    }
+
+
+
+
+
+    .absolventen-link{
+
+        z-index: 1000;
+        display: block;
+        position: fixed;
+
+        width: 80px;
+        height: 80px;
+
+        bottom: 0;
+        right: 0;
+
+
+    }
+
+    .bottom-right{
+        display: block;
+        position: absolute;
+        width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 0px 80px 80px;
+    border-color: transparent transparent #000 transparent;
+    }
+
+
+    .absolventen-link:hover .bottom-right, .absolventen-link.link-active .bottom-right {
+        border-color: transparent transparent rgb(35,35,35) transparent;
+    }
+
+
+    .absolventen-link .text{
+        display: block;
+        .transform( rotate(-45deg ) );
+        position: absolute;
+        bottom: 35px;
+        right: 4px;
+    }
+
+
+
+
+    .impressum-link{
+
+        z-index: 1000;
+        display: block;
+        position: fixed;
+
+        width: 80px;
+        height: 80px;
+
+        bottom: 0px;
+        left: 0px;
+
+
+    }
+
+    .bottom-left{
+        display: block;
+        position: absolute;
+        width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 100px 0px 0px 100px;
+    border-color: transparent transparent transparent #000;
+    }
+
+
+    .impressum-link:hover .bottom-left, .impressum-link.link-active .bottom-left{
+        border-color: transparent transparent transparent rgb(20,20,20);
+    }
+
+    .impressum-link .text{
+        display: block;
+        .transform( rotate(45deg) );
+        position: absolute;
+        bottom: 38px;
+        left: 7px;
+    }
+
+
+
+
+
+/* ============================== */
+
+
+
+}
+
+
+
+@media only screen and(min-width: 1250px){
+
+
+.image{
+    text-align: center;
+}
+.image img{
+    display: inline-block;
 }
 
 
 #gallery{
-    height: 0;
-}
-
-.open #gallery{
-    margin: 100px auto;
-    position: relative;
-    width: 900px;
-
-    overflow: hidden;
-
-    border-bottom: 1px solid #ccc;
-}
-
-.metaslide{
-    position: relative;
-    float:left;
-    height: 100%;
-    width: 900px;
-}
-
-
-.slide{
-    width: 900px;
-    float:left;
-}
-
-
-.metaslide .slide{
-    width:300px;
-    height: 100%;
-    float:left;
-}
-
-
-.slide img{
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-}
-
-
-.slide.onecol{
-    width: 150px;
-    position: relative;
-}
-
-.slide.threecol{
-    width: 450px;
-}
-
-.image{
-    text-align: center;
-}
-
-
-
-#scroller{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    z-index: 1000;
-    bottom: 10px;
-    right: 10px;
-    background: url('../img/scroller.png');
-}
-
-
-.slide h1, .slide h2, .slide h3, .slide p{
-    margin-top: 0;
-}
-.title{
-    display: block;
-    height: 25%;
-
-}
-
-.portrait{
-}
-
-.portrait img{
-    width: 100%;
-}
-
-.name{
-    display: block;
-    height: 50%;
-}
-
-.profs{
-    display: block;
-    height: 25%;
-}
-
-.konzept{
-        display: block;
-    height: 75%;
-}
-
-.image{
-    text-align: center;
-}
-
-.image img{
-    display: inline-block;
-    vertical-align: middle;
-}
-
-
-.image img.hoch{
-    height: 80%;
-    width: auto;
-}
-
-.image img.quer{
-    height: auto;
-    width: 80%;
-}
-
-
-.spacer{
-    height: 25%;
-    display: block;
-}
-
-
-#close{
-    display: none;
-}
-
-.open #gallery #close{
-    display: block;
-}
-
-
-.helper{
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-/* ================== GALLERY ==================== */
-/* =============================================== */
-
-
-
-
-
-#team{
-    width: 50%;
-    text-align: center;
-
-    margin: 0 auto;
-}
-
-
-
-
-#ohm{
-    width: 100%;
-    text-align: center;
-    margin: 100px auto;
-
-}
-
-
-
-/* ================== Desktops usw. ==================== */
-
-
-
-}
-
-
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-/* Styles */
-
-body{
-    font-size: 11px;
+    width: 1200px;
 }
 
 section{
-    width: 100%;
+    width: 1200px;
 
-    padding: 10px;
-
+    padding: 0;
 }
 
-#cube{
-    width: 100px;
-    height: 100px;
+#sponsoren{
+    width: 1200px;
 }
+
+#ohm{
+    width: 1200px;
+}
+
+
+
+
 
 }
 
