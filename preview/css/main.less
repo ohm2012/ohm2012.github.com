@@ -878,7 +878,15 @@ list-style: none;
 
 */
 
+#team{
+    position: relative;
+}
+
 #team table{
+    width: 100%;
+}
+
+#ohm{
     width: 100%;
 }
 
@@ -1004,7 +1012,7 @@ and (orientation : portrait) {
 
 
     #gallery{
-        width: 900px;
+        width: 750px;
         position: relative;
 
     }
@@ -1092,13 +1100,13 @@ and (orientation : portrait) {
 
 
     section{
-        width: 900px;
+        width: 750px;
 
         padding: 0;
     }
 
     #sponsoren{
-        width: 900px;
+        width: 750px;
     }
 
 
@@ -1118,9 +1126,6 @@ and (orientation : portrait) {
 
 
 
-    #ohm{
-        width: 900px;
-    }
 
 
     #absolventen-liste{
@@ -1156,19 +1161,17 @@ and (orientation : portrait) {
 }
 
 
-#cursor.normal{
-    display: none;
-    background: url('../img/hand.png') no-repeat;
-}
-
 #cursor.gallery.left{
     display: block;
-    background: url('../img/handleft.png') no-repeat;
+    background: url('../img/sponsoren.png') no-repeat -601px 0; width: 90px; height: 90px;
 }
+
+
+
 
 #cursor.gallery.right{
     display: block;
-    background: url('../img/handright.png') no-repeat;
+    background: url('../img/sponsoren.png') no-repeat -601px -91px; width: 90px; height: 90px;
 }
 
 #cursor.brille{
@@ -1426,6 +1429,25 @@ and (orientation : portrait) {
 
 /* ============================== */
 
+
+
+}
+
+
+@media only screen and(min-width: 1000px){
+
+    section{
+        width: 900px;
+    }
+
+    #sponsoren{
+        width: 900px;
+    }
+
+
+    #gallery{
+        width: 900px;
+    }
 
 
 }
