@@ -110,7 +110,8 @@ a:hover {
 }
 
 a:focus {
-    outline: thin dotted;
+    //outline: thin dotted;
+    outline: none;
 }
 
 /*
@@ -1014,6 +1015,7 @@ and (orientation : portrait) {
     #gallery{
         width: 750px;
         position: relative;
+        padding: 15px;
 
     }
 
@@ -1079,12 +1081,14 @@ and (orientation : portrait) {
 
         min-height: 100px;
         min-width: 100px;
+
+        text-align: right;
     }
 
     .portrait img{
         width: 100%;
         height: auto;
-        display: block;
+        display: inline-block;
     }
 
 
@@ -1434,7 +1438,7 @@ and (orientation : portrait) {
 }
 
 
-@media only screen and(min-width: 1000px){
+@media only screen and(min-width: 1050px){
 
     section{
         width: 900px;
